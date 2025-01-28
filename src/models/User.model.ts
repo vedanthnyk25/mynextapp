@@ -3,10 +3,10 @@ import { Message } from './Message.model'
 
 export interface User extends Document
 {
-    userName: string,
+    username: string,
     email: string,
     password: string,
-    vrifyCode: string,
+    verifyCode: string,
     verifyCodeExpiry: Date,
     isVerified: boolean,
     isAcceptingMessage: boolean,
@@ -14,7 +14,7 @@ export interface User extends Document
 }
 
 const userSchema : Schema<User> = new Schema({
-    userName:{
+    username:{
         type: String,
         required: [true,"Username is required"],
         unique: true
@@ -29,7 +29,7 @@ const userSchema : Schema<User> = new Schema({
         type: String,
         required: [true, "Password is required"]
     },
-    vrifyCode: {
+    verifyCode: {
         type: String,
         required: [true, "Verification code is required"]
     },
