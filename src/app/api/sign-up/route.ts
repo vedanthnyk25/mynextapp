@@ -9,11 +9,11 @@ export async function POST(request: Request){
     try {
         const {username, email, password} = await request.json();
 
-        const existingVerifiedUserbyUsrname= await User.findOne({
+        const existingVerifiedUserbyUsername= await User.findOne({
             username,
             isVerified: true
     })
-    if (existingVerifiedUserbyUsrname){ {
+    if (existingVerifiedUserbyUsername){ {
         Response.json(
             {
             message: "User already exists",
