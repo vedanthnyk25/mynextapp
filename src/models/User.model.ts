@@ -9,7 +9,7 @@ export interface User extends Document
     verifyCode: string,
     verifyCodeExpiry: Date,
     isVerified: boolean,
-    isAcceptingMessage: boolean,
+    isAcceptingMessages: boolean,
     messages: Message[]
 }
 
@@ -37,7 +37,7 @@ const userSchema : Schema<User> = new Schema({
         type: Date,
         required: [true, "Verification code expiry is required"]
     },
-    isAcceptingMessage: {
+    isAcceptingMessages: {
         type: Boolean,
         required: true
     },
